@@ -156,7 +156,7 @@ extension CameraController {
     func displayPreview(on view: UIView) throws {
         guard let captureSession = self.captureSession, captureSession.isRunning else { throw CameraControllerError.captureSessionIsMissing }
 
-        captureSession.sessionPreset = AVCaptureSessionPresetPhoto;
+      captureSession.sessionPreset = AVCaptureSession.Preset
         self.previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         self.previewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
 
