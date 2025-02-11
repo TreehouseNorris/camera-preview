@@ -1,6 +1,13 @@
-# node files
-dist/
+# distrib files
+#dist/
+
+# source files
 node_modules/
+demo/
+.husky/
+src/
+package-lock.json
+
 
 # iOS files
 Pods
