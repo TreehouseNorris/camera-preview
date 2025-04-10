@@ -275,6 +275,7 @@ class Preview extends RelativeLayout implements SurfaceHolder.Callback, TextureV
         if (displayOrientation == 90 || displayOrientation == 270) {
             targetRatio = (double) h / w;
         }
+        Log.d(TAG, "requesting preview size: w: " + w + " h: " + h + " r: " + targetRatio);
 
         if (sizes == null) {
             return null;
@@ -288,6 +289,7 @@ class Preview extends RelativeLayout implements SurfaceHolder.Callback, TextureV
         // Try to find an size match aspect ratio and size
         for (Camera.Size size : sizes) {
             double ratio = (double) size.width / size.height;
+            Log.d(TAG, "checking available preview size: w: " + size.width + " h: " + size.height + " r: " + ratio);
             if (Math.abs(ratio - targetRatio) > ASPECT_TOLERANCE) continue;
             if (Math.abs(size.height - targetHeight) < minDiff) {
                 optimalSize = size;
